@@ -16,7 +16,7 @@ void perm(char *a, int i)
 }
 int main()
 {
-    char a[] = "abc";
+    char a[] = "1234";
     perm(a, 0);
     return 0;
 }

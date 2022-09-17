@@ -35,11 +35,13 @@ bool isSafe(int board[][100], int i, int j, int n)
     }
     return true;
 }
+int ans=0;
 bool NQueen(int board[][100], int i, int n)
 {
     // base case
     if (i == n)
     {
+        ans++;
         for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < n; j++)
@@ -48,7 +50,7 @@ bool NQueen(int board[][100], int i, int n)
             }
             cout << endl;
         }
-        return true;
+        return false;
     }
     // recursive case
 
@@ -73,6 +75,6 @@ int main()
     int n;
     cin >> n;
     NQueen(board, 0, n);
-
+    cout<<endl<<ans;    
     return 0;
 }
