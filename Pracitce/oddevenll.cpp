@@ -35,22 +35,34 @@ void printing(node *head)
     }
     cout << endl;
 }
-node* add(node* head1,node* head2){
-    int carry=0;
-    node* temp=head1;
-    while (head1!=NULL and head2!=NULL)
-    {
-        head1->data=head1->data+head2->data+carry;
-        carry=head1->data/10;
-        head1->data=head1->data%10;
-        // cout<<head1->data<<" "<<head2->data<<" "<<carry<<endl;
-        head1=head1->next;
-        head2=head2->next;
+node* odd(node* ode){
+    if(head==NULL){
+        return head;
     }
-    head1->next=NULL;
-    // head1->next=new node(carry)+head1->data+head2->data;
-    return temp;
-    
+    if(head->data%2!=0){
+        odd->next=head;
+
+    }
+}
+node* even(node* eve){
+    if(eve==NULL){
+        return eve;
+    }
+    if(eve->data%2==0){
+        eve->next=even(eve->next);
+        return eve;
+    }
+    else{
+        node* ode=eve;
+    }
+}
+node* oddeve(node* head){
+    if(head==nullptr) {
+        return head;
+    }
+    if(head->data%2==0){
+        head->next=
+    }
 }
 int main()
 {
@@ -64,16 +76,8 @@ int main()
         cin>>x;
         v=insert(x, head, tail);
     }
-    node* head2=NULL,*tail2=NULL;
-    int n2;
-    cin>>n2;
-    for (int i = 0; i < n2;i++)
-    {
-        int x;
-        cin>>x;
-        v=insert(x, head2, tail2);
-    }
-    node* pritnjob=add(head,head2);
+    node* eve=even(head);
+    node* ode=odd(head);
     printing(pritnjob);
     return 0;
 }

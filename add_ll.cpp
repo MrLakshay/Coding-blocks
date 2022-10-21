@@ -40,16 +40,14 @@ node* add(node* head1,node* head2){
     node* temp=head1;
     while (head1!=NULL and head2!=NULL)
     {
-        head1->data=head1->data+head2->data+carry;
-        carry=head1->data/10;
-        head1->data=head1->data%10;
-        // cout<<head1->data<<" "<<head2->data<<" "<<carry<<endl;
-        head1=head1->next;
-        head2=head2->next;
+        head1->data+=head2->data+carry;
+        carry=carry%10;
+        head1->data=head1->data/10;
     }
-    head1->next=NULL;
-    // head1->next=new node(carry)+head1->data+head2->data;
-    return temp;
+    if(carry!=0){
+        head1->next=new node(carry);
+    }
+    return head1;
     
 }
 int main()
@@ -73,7 +71,7 @@ int main()
         cin>>x;
         v=insert(x, head2, tail2);
     }
-    node* pritnjob=add(head,head2);
+    node* pritnjob=add(head1,head2);
     printing(pritnjob);
     return 0;
 }
