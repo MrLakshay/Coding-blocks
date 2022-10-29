@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stack>
 using namespace std;
-bool isBalanced(char* a){
+bool isBalanced(string& a){
     stack<char>stk;
     for (int i = 0; a[i]!='\0'; i++)
     {
@@ -40,7 +40,9 @@ bool isBalanced(char* a){
 }
 int main()
 {
-    char a[]="{a+[b*(c+d)]*e}";
+    // char a[]="{a+[b*(c+d)]*e}";
+    string a;
+    cin>>a;
     if(isBalanced(a)){
         cout<<"Balanced"<<endl;
     }
